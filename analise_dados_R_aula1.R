@@ -25,3 +25,7 @@ auxiliar <- count(aulas, vars = "course_id")
 View(auxiliar)
 
 write.csv(auxiliar, file = "popularidade.csv")
+
+importado <- read.csv('popularidade.csv')
+View(importado)
+
