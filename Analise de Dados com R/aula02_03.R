@@ -22,11 +22,3 @@ plot(h, freq=TRUE, ylab="Relative Frequency")
 mean(duracao$dias, na.rm=TRUE)
 median(duracao$dias, na.rm=T)
 summary(duracao$dias)
-
-sumario_media <- aggregate(duracao$dias, list(duracao$curso), mean, na.rm=TRUE)
-sumario_mediana <- aggregate(duracao$dias, list(duracao$curso), median, na.rm=TRUE)
-
-View(sumario_media)
-sumario_media <- rename(sumario_media, replace=c('Group.1'='curso', 'x'='media'))
-
-popularidade_duraca <- merge(sumario_media, sumario_mediana, by = intersect(names(sumario_media), names(sumario_mediana)), all = FALSE)
