@@ -17,3 +17,11 @@ tail(section_id)
 
 View(unique(sort(section_id)))
 length(unique(sort(section_id)))
+
+install.packages("plyr")
+library(plyr)
+
+auxiliar <- count(aulas, vars = "course_id")
+View(auxiliar)
+
+write.csv(auxiliar, file = "popularidade.csv")
